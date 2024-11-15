@@ -25,4 +25,4 @@ void resetColor();
 void setColor(int n);
 void drawCube__(int *); /* Why __ but not remove? */
 void resetCube(int *);
-void rotateSide(int, int*);
+void rotateSide(int, int*, int*);
