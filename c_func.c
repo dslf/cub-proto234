@@ -3,10 +3,10 @@
 
 
 void drawRawCube(int *cube){
-    int i;
-    for (i = 0; i < SIZE_OF_CUBE; i++) {
-        printf("pos: %d = %d\n",i, cube[i]);
-    }
+	int i;
+	for (i = 0; i < SIZE_OF_CUBE; i++) {
+		printf("pos: %d = %d\n",i, cube[i]);
+	}
 }
 
 void setColor(int n) {
@@ -23,19 +23,19 @@ void resetColor() { /* Actually, I can move this func to above, like n=6 is rese
 }
 
 void resetCube(int *cube){
-    int i,j;
-    int k=0;
-    for (i = 0; i < 6; i++)
-        for(j = 0; j < 9; j++){
-            cube[k] = i;
-            if (XDDEBUG) printf("k=%d i=%d j=%d\n",k, i, j);
-            k++;
-    }
+	int i,j;
+	int k=0;
+	for (i = 0; i < 6; i++)
+		for(j = 0; j < 9; j++){
+			cube[k] = i;
+			if (XDDEBUG) printf("k=%d i=%d j=%d\n",k, i, j);
+			k++;
+	}
 }
 
 void drawCube(int *cube) {
 	int i, j, k = 0;
-    /* Top (White) */
+	/* Top (White) */
 	for (j = 0; j < 9; j++) {
 		if (k == 0) {
 			resetColor();
@@ -55,7 +55,7 @@ void drawCube(int *cube) {
 	printf("\n\n");
 	k = 0;
 
-    /* Middle row (Orange, Green, Red, Blue) */
+	/* Middle row (Orange, Green, Red, Blue) */
 	for (i = 1; i < 5; ++i)
 		for (j = 0; j < 3; j++) {
 			if (k == 3) {
@@ -63,7 +63,7 @@ void drawCube(int *cube) {
 				resetColor();
 				printf(" ");
 			}
-            setColor(cube[SIZE_OF_SIDE*i+j]);
+			setColor(cube[SIZE_OF_SIDE*i+j]);
 			printf("  ");
 			resetColor();
 			++k;
@@ -78,7 +78,7 @@ void drawCube(int *cube) {
 				resetColor();
 				printf(" ");
 			}
-            setColor(cube[SIZE_OF_SIDE*i+j]);
+			setColor(cube[SIZE_OF_SIDE*i+j]);
 			printf("  ");
 			resetColor();
 			++k;
@@ -93,7 +93,7 @@ void drawCube(int *cube) {
 				resetColor();
 				printf(" ");
 			}
-            setColor(cube[SIZE_OF_SIDE*i+j]);
+			setColor(cube[SIZE_OF_SIDE*i+j]);
 			printf("  ");
 			resetColor();
 			++k;
@@ -113,7 +113,7 @@ void drawCube(int *cube) {
 		}
 
 		/* Bottom (Yellow) */
-        setColor(cube[SIZE_OF_SIDE*5+j]);
+		setColor(cube[SIZE_OF_SIDE*5+j]);
 		printf("  ");
 		resetColor();
 		k++;
