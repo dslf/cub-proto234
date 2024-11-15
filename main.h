@@ -1,7 +1,10 @@
 #pragma once
 
 #define SIZE_OF_CUBE 3*3*6
+
+int main(int, char**);
 void drawCube(int *);
+void resetCube(int *);
 
 
 #define w 1
