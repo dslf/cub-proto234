@@ -14,7 +14,12 @@ int main(int agrc, char *argv[]) {
 	/* memset(cube, 0, sizeof(cube) * SIZE_OF_CUBE); */
 	resetCube(cube);
 	/* rotateSide(L, cube, buffer); */
-	rotateSide(R, cube, buffer);
+	
+	/* cstimer test scramble: 	https://i.imgur.com/lGIOgyH.png */
+	rotateCube("U2 L' B2 L2 D2 R F2 R F2 R' B' L U2 R U L B' R'", cube, buffer);
+	
+	
+
 	drawCube(cube);
 	free(cube);
 	free(buffer);
