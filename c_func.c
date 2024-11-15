@@ -120,3 +120,103 @@ void drawCube(int *cube) {
 	}
 	printf("\n");
 }
+
+void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
+	while (*str != '\0') { /* Go through every char in str, until null-terminator */
+		switch (*str) {
+			case 'D':
+				if (*(str + 1) == 39) { /* D' */
+					rotateSide(D, cube_arr, buffer_arr);
+					rotateSide(D, cube_arr, buffer_arr);
+					rotateSide(D, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* D2 */
+					rotateSide(D, cube_arr, buffer_arr);
+					rotateSide(D, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(D, cube_arr, buffer_arr);
+				break;
+
+			case 'F':
+				if (*(str + 1) == 39) { /* F' */
+					rotateSide(F, cube_arr, buffer_arr);
+					rotateSide(F, cube_arr, buffer_arr);
+					rotateSide(F, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* F2 */
+					rotateSide(F, cube_arr, buffer_arr);
+					rotateSide(F, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(F, cube_arr, buffer_arr);
+				break;
+
+			case 'B':
+				if (*(str + 1) == 39) { /* B' */
+					rotateSide(B, cube_arr, buffer_arr);
+					rotateSide(B, cube_arr, buffer_arr);
+					rotateSide(B, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* B2 */
+					rotateSide(B, cube_arr, buffer_arr);
+					rotateSide(B, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(B, cube_arr, buffer_arr);
+				break;
+
+			case 'U':
+				if (*(str + 1) == 39) { /* U' */
+					rotateSide(U, cube_arr, buffer_arr);
+					rotateSide(U, cube_arr, buffer_arr);
+					rotateSide(U, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* U2 */
+					rotateSide(U, cube_arr, buffer_arr);
+					rotateSide(U, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(U, cube_arr, buffer_arr);
+				break;
+
+			case 'L':
+				if (*(str + 1) == 39) { /* L' */
+					rotateSide(L, cube_arr, buffer_arr);
+					rotateSide(L, cube_arr, buffer_arr);
+					rotateSide(L, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* L2 */
+					rotateSide(L, cube_arr, buffer_arr);
+					rotateSide(L, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(L, cube_arr, buffer_arr);
+				break;
+
+			case 'R':
+				if (*(str + 1) == 39) { /* R' */
+					rotateSide(R, cube_arr, buffer_arr);
+					rotateSide(R, cube_arr, buffer_arr);
+					rotateSide(R, cube_arr, buffer_arr);
+					break;
+				}
+				if (*(str + 1) == '2') { /* R2 */
+					rotateSide(R, cube_arr, buffer_arr);
+					rotateSide(R, cube_arr, buffer_arr);
+					break;
+				}
+				rotateSide(R, cube_arr, buffer_arr);
+				break;
+
+			default:
+				break; /* Skip any nonsence */
+		}
+		str++; /* Increase pointer */
+	}
+}
