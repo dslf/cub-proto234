@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "c_func.c"
+#include "c_move_matrix.c"
 #include "main.h"
 
 int main(int agrc, char *argv[]) {
@@ -10,6 +11,7 @@ int main(int agrc, char *argv[]) {
     cube = malloc(sizeof(cube)*SIZE_OF_CUBE);
     /* memset(cube, 0, sizeof(cube) * SIZE_OF_CUBE); */
     resetCube(cube);
+    rotateSide(L, cube);
     drawCube(cube);
     free(cube);
     return 0;
