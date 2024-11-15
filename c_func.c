@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 
-void drawCube__(int *cube){
+void drawRawCube(int *cube){
     int i;
     for (i = 0; i < SIZE_OF_CUBE; i++) {
-        printf("%d = %d\n",i, cube[i]);
+        printf("pos: %d = %d\n",i, cube[i]);
     }
 }
 
@@ -18,7 +18,7 @@ void setColor(int n) {
 	if (n == 5) printf("\x1b[48;5;226m");	/* Yellow */
 }
 
-void resetColor() { /* Actually, I can move this func to above, like n6 is reset */
+void resetColor() { /* Actually, I can move this func to above, like n=6 is reset */
 	printf("\033[0m"); /* Default console color */
 }
 

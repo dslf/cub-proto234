@@ -13,7 +13,8 @@ int main(int agrc, char *argv[]) {
     cube = malloc(sizeof(cube) * SIZE_OF_CUBE);
     /* memset(cube, 0, sizeof(cube) * SIZE_OF_CUBE); */
     resetCube(cube);
-    rotateSide(L, cube, buffer);
+    /* rotateSide(L, cube, buffer); */
+    rotateSide(R, cube, buffer);
     drawCube(cube);
     free(cube);
     free(buffer);
