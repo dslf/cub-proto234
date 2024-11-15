@@ -40,13 +40,13 @@ void rotateSide(int direction, int *cube_arr, int *buffer_arr) {
 			cube_arr[MAPPING_TOP+5]=buffer_arr[MAPPING_FRONT+5];
 			cube_arr[MAPPING_TOP+8]=buffer_arr[MAPPING_FRONT+8];
 		/* Top -> Back */
-			cube_arr[MAPPING_BACK+8]=buffer_arr[MAPPING_TOP+2];
-			cube_arr[MAPPING_BACK+5]=buffer_arr[MAPPING_TOP+5];
-			cube_arr[MAPPING_BACK+2]=buffer_arr[MAPPING_TOP+8];
+			cube_arr[MAPPING_BACK+6]=buffer_arr[MAPPING_TOP+2];
+			cube_arr[MAPPING_BACK+3]=buffer_arr[MAPPING_TOP+5];
+			cube_arr[MAPPING_BACK]=buffer_arr[MAPPING_TOP+8];
 		/* Back -> Bottom */
-			cube_arr[MAPPING_BOTTOM+2]=buffer_arr[MAPPING_BACK+8];
-			cube_arr[MAPPING_BOTTOM+5]=buffer_arr[MAPPING_BACK+5];
-			cube_arr[MAPPING_BOTTOM+8]=buffer_arr[MAPPING_BACK+2];
+			cube_arr[MAPPING_BOTTOM+2]=buffer_arr[MAPPING_BACK+6];
+			cube_arr[MAPPING_BOTTOM+5]=buffer_arr[MAPPING_BACK+3];
+			cube_arr[MAPPING_BOTTOM+8]=buffer_arr[MAPPING_BACK];
 		/* Bottom -> Front */
 			cube_arr[MAPPING_FRONT+2]=buffer_arr[MAPPING_BOTTOM+2];
 			cube_arr[MAPPING_FRONT+5]=buffer_arr[MAPPING_BOTTOM+5];
@@ -63,7 +63,36 @@ void rotateSide(int direction, int *cube_arr, int *buffer_arr) {
 			cube_arr[MAPPING_RIGHT+7]=buffer_arr[MAPPING_RIGHT+5];
 			cube_arr[MAPPING_RIGHT+8]=buffer_arr[MAPPING_RIGHT+2];
 			break;
-		
+		case U:
+		/* left = front */
+			cube_arr[MAPPING_LEFT]=buffer_arr[MAPPING_FRONT];
+			cube_arr[MAPPING_LEFT+1]=buffer_arr[MAPPING_FRONT+1];
+			cube_arr[MAPPING_LEFT+2]=buffer_arr[MAPPING_FRONT+2];
+		/* back = left */
+			cube_arr[MAPPING_BACK]=buffer_arr[MAPPING_LEFT];
+			cube_arr[MAPPING_BACK+1]=buffer_arr[MAPPING_LEFT+1];
+			cube_arr[MAPPING_BACK+2]=buffer_arr[MAPPING_LEFT+2];
+		/* right = back */
+			cube_arr[MAPPING_RIGHT]=buffer_arr[MAPPING_BACK];
+			cube_arr[MAPPING_RIGHT+1]=buffer_arr[MAPPING_BACK+1];
+			cube_arr[MAPPING_RIGHT+2]=buffer_arr[MAPPING_BACK+2];
+		/* front = right */
+			cube_arr[MAPPING_FRONT]=buffer_arr[MAPPING_RIGHT];
+			cube_arr[MAPPING_FRONT+1]=buffer_arr[MAPPING_RIGHT+1];
+			cube_arr[MAPPING_FRONT+2]=buffer_arr[MAPPING_RIGHT+2];
+		/* top rotation */
+			cube_arr[MAPPING_TOP]=buffer_arr[MAPPING_TOP+6];
+			cube_arr[MAPPING_TOP+1]=buffer_arr[MAPPING_TOP+3];
+			cube_arr[MAPPING_TOP+2]=buffer_arr[MAPPING_TOP];
+
+			cube_arr[MAPPING_TOP+3]=buffer_arr[MAPPING_TOP+1];
+			cube_arr[MAPPING_TOP+5]=buffer_arr[MAPPING_TOP+7];
+
+			cube_arr[MAPPING_TOP+6]=buffer_arr[MAPPING_TOP+8];
+			cube_arr[MAPPING_TOP+7]=buffer_arr[MAPPING_TOP+5];
+			cube_arr[MAPPING_TOP+8]=buffer_arr[MAPPING_TOP+2];
+			break;
+
 	}
 	/* free(buffer_arr); */
 }
