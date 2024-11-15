@@ -18,7 +18,7 @@ void setColor(int n) {
 	if (n == 5) printf("\x1b[48;5;226m");	/* Yellow */
 }
 
-void resetColor() { /* Actually, I can move this to func above, like n6 is reset */
+void resetColor() { /* Actually, I can move this func to above, like n6 is reset */
 	printf("\033[0m"); /* Default console color */
 }
 
@@ -28,7 +28,7 @@ void resetCube(int *cube){
     for (i = 0; i < 6; i++)
         for(j = 0; j < 9; j++){
             cube[k] = i;
-            printf("k=%d i=%d j=%d\n",k, i, j);
+            if (XDDEBUG) printf("k=%d i=%d j=%d\n",k, i, j);
             k++;
     }
 }
