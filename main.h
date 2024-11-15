@@ -10,6 +10,8 @@
 #define MAPPING_BACK  MAPPING_RIGHT + SIZE_OF_SIDE
 #define MAPPING_DOWN  MAPPING_BACK  + SIZE_OF_SIDE
 
+#define XDDEBUG 0
+
 
 
 int main(int, char**);
