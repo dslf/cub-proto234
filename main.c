@@ -1,24 +1,15 @@
-#include "wchar.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+#include "c_func.c"
 
-#define wg 1
-#define wr 2
-#define wb 4
-#define wo 8
+int main(int agrc, char *argv[]) {
+    int *cube;
 
-#define gr 16
-#define go 32
-#define ob 64
-#define br 128 
-
-#define yg 256
-#define yo 512
-#define yb 1024
-#define yr 2048
-
-int main() {
-
-printf("%d\n", yg);
-return 0;
-
+    cube = malloc(sizeof(cube)*9*6);
+    printf("size of cube array is: %d\n", SIZE_OF_CUBE);
+    drawCube(cube);
+    free(cube);
+    return 0;
+    
 }
