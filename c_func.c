@@ -4,9 +4,11 @@
 
 void drawRawCube(int *cube){
 	int i;
+	printf("\n");
 	for (i = 0; i < SIZE_OF_CUBE; i++) {
-		printf("pos: %d = %d\n",i, cube[i]);
+		printf("%d", cube[i]);
 	}
+	printf("\n");
 }
 
 void setColor(int n) {
@@ -15,13 +17,25 @@ void setColor(int n) {
 	if (n == 2) printf("\e[42m");			/* Green */
 	if (n == 3) printf("\e[41m");			/* Red */
 	if (n == 4) printf("\e[44m");			/* Blue */
-	if (n == 5) printf("\x1b[48;5;226m");	/* Yellow */
+	if (n == 5) printf("\x1b[48;5;226m");		/* Yellow */
 }
 
-void resetColor() { /* Actually, I can move this func to above, like n=6 is reset */
+void resetColor() { /* Probably should move this function above to setColor, like if n==6 then reset color, but whatever */
 	printf("\033[0m"); /* Default console color */
 }
 
+void runTestSolve(int *cube, int *buffer, int pos){
+	const char *test_cube = "004003050323413025431421254223431102532240544315551151";
+	int i;
+
+	for( i = 0; i < 55; i++){
+		cube[i] = test_cube[i] - '0';
+	}
+	/* drawCube(cube); 
+	drawRawCube(cube); */
+	rotateCube("B' R L2 U F' R' B L2 U' B2 U2 F' L2 B2 R2 B' U2 F' L2 F R2", cube, buffer); 
+	drawCube(cube);
+}
 void resetCube(int *cube){
 	int i,j;
 	int k=0;
@@ -192,8 +206,8 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
 					break;
 				}
 				if (*(str + 1) == '2') { /* L2 */
-					rotateSide(L, cube_arr, buffer_arr);
-					rotateSide(L, cube_arr, buffer_arr);
+					rotateSide(L2, cube_arr, buffer_arr);
+					/* rotateSide(L, cube_arr, buffer_arr); */
 					break;
 				}
 				rotateSide(L, cube_arr, buffer_arr);
@@ -214,9 +228,9 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
 				rotateSide(R, cube_arr, buffer_arr);
 				break;
 
-			default:
-				break; /* Skip any nonsence */
+			default: /* Skip any nonsence */
+				break; 
 		}
-		str++; /* Increase pointer */
+		str++;
 	}
 }
