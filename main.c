@@ -16,11 +16,10 @@ int main(int agrc, char *argv[]) {
 	/* rotateSide(L, cube, buffer); */
 	
 	/* cstimer test scramble: 	https://i.imgur.com/lGIOgyH.png */
-	rotateCube("U2 L' B2 L2 D2 R F2 R F2 R' B' L U2 R U L B' R'", cube, buffer);
-	
-	
+/*	rotateCube("R2 F' L2 F U2 B R2 B2 L2 F U2 B2 U L2 B' R F U' L2 R' B", cube, buffer);  */
 
-	drawCube(cube);
+	runTestSolve(cube, buffer, 0);
+
 	free(cube);
 	free(buffer);
 	return 0;
