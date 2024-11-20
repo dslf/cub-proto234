@@ -221,8 +221,8 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
 					break;
 				}
 				if (*(str + 1) == '2') { /* R2 */
-					rotateSide(R, cube_arr, buffer_arr);
-					rotateSide(R, cube_arr, buffer_arr);
+					/* rotateSide(R, cube_arr, buffer_arr); */
+					rotateSide(R2, cube_arr, buffer_arr);
 					break;
 				}
 				rotateSide(R, cube_arr, buffer_arr);
