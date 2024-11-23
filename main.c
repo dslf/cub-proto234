@@ -6,15 +6,10 @@
 #include "main.h"
 
 int main(int agrc, char *argv[]) {  
-	int *cube;
-	int *buffer;
-	int i;
+	int *cube, *total, *buffer, i;
 	char **scrambles;
-	int *total;
 
 	total = malloc(sizeof(total[0]));
-	printf("105: zdem-adf\n");
-
 	buffer = malloc(sizeof(buffer) * SIZE_OF_CUBE);
 	cube = malloc(sizeof(cube) * SIZE_OF_CUBE);
 	/* memset(cube, 0, sizeof(cube) * SIZE_OF_CUBE); */
@@ -24,17 +19,20 @@ int main(int agrc, char *argv[]) {
 	/* cstimer test scramble: 	https://i.imgur.com/lGIOgyH.png */
 /*	rotateCube("R2 F' L2 F U2 B R2 B2 L2 F U2 B2 U L2 B' R F U' L2 R' B", cube, buffer);  */
 
-	/* runTestSolve(cube, buffer, 0); */
 	loadScrambles(&scrambles, total);
-	for(i = 0; i < *total; i++){
+	for(i = 0; i < *total - 1; i++){ /* *total */
 		rotateCube(scrambles[i], cube, buffer);
-		drawCube(cube);
+		/* drawCube(cube); */
 	}
 	/* printf("105: %s", scrambles[105]); */
 	/* freeScrambles(scrambles, size_of_scrambles);  */
 	
-
+	/* runTestSolve(cube, buffer, 0);  */
+	
 	/* for (i=0; i < *total; i++) printf("strings[%d] = %s\n", i, scrambles[i]); */
+	resetCube(cube);
+	rotateCube("R F2 L2 U2 R2 U2 B2 L2 B2 U' B2 U' R' B L' U F2 D2 B' D'", cube, buffer);
+	drawCube(cube);
  	free(cube);
 	free(buffer); 
 	freeScrambles(&scrambles, total);
