@@ -1,18 +1,15 @@
 #pragma once
 
-/* don't ask why not hardcode mapping - 0 9 18 27 36 45 */
-#define SIZE_OF_SIDE 3 * 3
-#define SIZE_OF_CUBE SIZE_OF_SIDE * 6
+#define SIZE_OF_SIDE 9      /* (3 * 3) */
+#define SIZE_OF_CUBE 54     /* ((3 * 3) * 6) */
 
 #define MAPPING_TOP 0
-#define MAPPING_LEFT MAPPING_TOP + SIZE_OF_SIDE		
-#define MAPPING_FRONT MAPPING_LEFT + SIZE_OF_SIDE
-#define MAPPING_RIGHT MAPPING_FRONT + SIZE_OF_SIDE
-#define MAPPING_BACK MAPPING_RIGHT + SIZE_OF_SIDE
-#define MAPPING_BOTTOM MAPPING_BACK + SIZE_OF_SIDE
+#define MAPPING_LEFT 9
+#define MAPPING_FRONT 18
+#define MAPPING_RIGHT 27
+#define MAPPING_BACK 36
+#define MAPPING_BOTTOM 45
 
-#define M_T 0
-#define M_L 
 
 #define XDDEBUG 0
 
@@ -50,3 +47,19 @@ void rotateSide(int, int*, int*);
 void rotateCube(const char *str, int *, int *);
 void loadScrambles(char ***, int *);
 void freeScrambles(char ***, int *);
+
+
+
+/* Here I hide my useless stuff, in case it comes in handy  */
+
+/* don't ask why not hardcode mapping - 0 9 18 27 36 45 *//*
+
+#define SIZE_OF_SIDE 3 * 3 
+#define SIZE_OF_CUBE SIZE_OF_SIDE * 6
+
+#define MAPPING_TOP 0
+#define MAPPING_LEFT MAPPING_TOP + SIZE_OF_SIDE
+#define MAPPING_FRONT MAPPING_LEFT + SIZE_OF_SIDE
+#define MAPPING_RIGHT MAPPING_FRONT + SIZE_OF_SIDE
+#define MAPPING_BACK MAPPING_RIGHT + SIZE_OF_SIDE
+#define MAPPING_BOTTOM MAPPING_BACK + SIZE_OF_SIDE */
