@@ -48,3 +48,5 @@ void resetCube(int *);
 void printCubeArray(int *);
 void rotateSide(int, int*, int*);
 void rotateCube(const char *str, int *, int *);
+void loadScrambles(char ***, int *);
+void freeScrambles(char ***, int *);
