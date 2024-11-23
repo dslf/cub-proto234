@@ -241,7 +241,7 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
 	}
 }
 
-void loadScrambles(char ***strings, int *total){
+int loadScrambles(char ***strings, int *total){
     FILE *file;
     char buffer[4096];
     int i = 0; 
@@ -251,7 +251,8 @@ void loadScrambles(char ***strings, int *total){
 
     file = fopen("scrambles.txt", "r");
     if (file == NULL) {
-        printf("file not found\n");       
+        printf("file not found\n"); 
+        return 1;      
     }
     
     while(!feof(file)){ 
@@ -276,6 +277,7 @@ void loadScrambles(char ***strings, int *total){
         i++;
     }
     fclose(file);
+    return 0;
    /*  printf("total lines: %d\n", i); */
     
    /*  printf("\nResulting strings array: \n\n");

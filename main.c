@@ -19,12 +19,14 @@ int main(int agrc, char *argv[]) {
 	/* cstimer test scramble: 	https://i.imgur.com/lGIOgyH.png */
 /*	rotateCube("R2 F' L2 F U2 B R2 B2 L2 F U2 B2 U L2 B' R F U' L2 R' B", cube, buffer);  */
 
-	loadScrambles(&scrambles, total);
-	for(i = 0; i < *total - 1; i++){ /* *total */
-		rotateCube(scrambles[i], cube, buffer);
-		/* drawCube(cube); */
-	}
-	/* printf("105: %s", scrambles[105]); */
+        if (!loadScrambles(&scrambles, total)) { 
+          printf("Found\n");
+          for (i = 0; i < *total - 1; i++) {
+            rotateCube(scrambles[i], cube, buffer);
+            /* drawCube(cube); */
+          }
+        }
+        /* printf("105: %s", scrambles[105]); */
 	/* freeScrambles(scrambles, size_of_scrambles);  */
 	
 	/* runTestSolve(cube, buffer, 0);  */
