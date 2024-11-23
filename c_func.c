@@ -194,8 +194,9 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
                 break;
             }
             if (*(str + 1) == '2') { /* U2 */
-                rotateSide(U, cube_arr, buffer_arr);
-                rotateSide(U, cube_arr, buffer_arr);
+                rotateSide(U2, cube_arr, buffer_arr);
+                /* rotateSide(U, cube_arr, buffer_arr);
+                rotateSide(U, cube_arr, buffer_arr); */
                 break;
             }
             rotateSide(U, cube_arr, buffer_arr);
@@ -210,7 +211,8 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
             }
             if (*(str + 1) == '2') { /* L2 */
                 rotateSide(L2, cube_arr, buffer_arr);
-                /* rotateSide(L, cube_arr, buffer_arr); */
+                /* rotateSide(L, cube_arr, buffer_arr);
+                rotateSide(L, cube_arr, buffer_arr); */
                 break;
             }
             rotateSide(L, cube_arr, buffer_arr);
@@ -224,7 +226,8 @@ void rotateCube(const char *str, int *cube_arr, int *buffer_arr) {
                 break;
             }
             if (*(str + 1) == '2') { /* R2 */
-                /* rotateSide(R, cube_arr, buffer_arr); */
+                /* rotateSide(R, cube_arr, buffer_arr);
+                rotateSide(R, cube_arr, buffer_arr); */
                 rotateSide(R2, cube_arr, buffer_arr);
                 break;
             }
@@ -282,8 +285,7 @@ void loadScrambles(char ***strings, int *total){
 
 void freeScrambles(char ***strings, int *total){
     int i;
-
     for (i = 0; i < *total; i++) free((*strings)[i]);
     free(*strings);
-    printf("total cleased strings: %d\n", *total);
+    printf("total cleared strings: %d\n", *total);
 }
