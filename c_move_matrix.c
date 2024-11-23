@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <string.h>
 
 void rotateSide(int direction, int *cube_arr, int *buffer_arr) {   
@@ -245,6 +244,36 @@ void rotateSide(int direction, int *cube_arr, int *buffer_arr) {
 			cube_arr[MAPPING_RIGHT+6]=buffer_arr[MAPPING_RIGHT+2];
 			cube_arr[MAPPING_RIGHT+7]=buffer_arr[MAPPING_RIGHT+1];
 			cube_arr[MAPPING_RIGHT+8]=buffer_arr[MAPPING_RIGHT];
+			break;
+		
+		case U2:   
+			cube_arr[MAPPING_TOP]=buffer_arr[MAPPING_TOP+8];
+			cube_arr[MAPPING_TOP+1]=buffer_arr[MAPPING_TOP+7];
+			cube_arr[MAPPING_TOP+2]=buffer_arr[MAPPING_TOP+6];
+
+			cube_arr[MAPPING_TOP+3]=buffer_arr[MAPPING_TOP+5];
+			cube_arr[MAPPING_TOP+4]=buffer_arr[MAPPING_TOP+4];
+			cube_arr[MAPPING_TOP+5]=buffer_arr[MAPPING_TOP+3];
+
+			cube_arr[MAPPING_TOP+6]=buffer_arr[MAPPING_TOP+2];
+			cube_arr[MAPPING_TOP+7]=buffer_arr[MAPPING_TOP+1];
+			cube_arr[MAPPING_TOP+8]=buffer_arr[MAPPING_TOP];
+
+			cube_arr[MAPPING_FRONT]=buffer_arr[MAPPING_BACK];
+			cube_arr[MAPPING_FRONT+1]=buffer_arr[MAPPING_BACK+1];
+			cube_arr[MAPPING_FRONT+2]=buffer_arr[MAPPING_BACK+2];
+
+			cube_arr[MAPPING_RIGHT]=buffer_arr[MAPPING_LEFT];
+			cube_arr[MAPPING_RIGHT+1]=buffer_arr[MAPPING_LEFT+1];
+			cube_arr[MAPPING_RIGHT+2]=buffer_arr[MAPPING_LEFT+2];
+
+			cube_arr[MAPPING_BACK]=buffer_arr[MAPPING_FRONT];
+			cube_arr[MAPPING_BACK+1]=buffer_arr[MAPPING_FRONT+1];
+			cube_arr[MAPPING_BACK+2]=buffer_arr[MAPPING_FRONT+2];
+
+			cube_arr[MAPPING_LEFT]=buffer_arr[MAPPING_RIGHT];
+			cube_arr[MAPPING_LEFT+1]=buffer_arr[MAPPING_RIGHT+1];
+			cube_arr[MAPPING_LEFT+2]=buffer_arr[MAPPING_RIGHT+2];
 			break;
 	}
 }
