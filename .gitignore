@@ -1,3 +1,5 @@
 *.exe
 tempCodeRunnerFile.c
 *.gch
+build.bat
+.gitignore
